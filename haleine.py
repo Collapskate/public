@@ -8,7 +8,7 @@ from data.users import User
 import flask_login
 from flask import Flask, jsonify
 from flask_login import LoginManager, login_required, current_user
-from flask_login import login_user
+from flask_login import login_user, logout_user
 import os
 
 app = Flask(__name__)
@@ -165,6 +165,13 @@ def lk(user):
         return redirect('/login')
 
 
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect("/login")
+
+
 #Вход
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -239,5 +246,5 @@ def get_api():
 
 if __name__ == '__main__':
     db_session.global_init("db/blogs.db")
-    port = int(os.environ.get('PORT', 5000))
-    app.run(port=port, host='0.0.0.0')
+    #port = int(os.environ.get('PORT', 5000))
+    app.run(port=8080, host='127.0.0.1')
