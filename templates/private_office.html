@@ -25,6 +25,18 @@ position: absolute; /* Абсолютное позиционирование */
     left: 270px;
     line-height: 1px;
 }
+.button {
+    background-color: #000000;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
 
     </style>
 </head>
@@ -47,11 +59,12 @@ position: absolute; /* Абсолютное позиционирование */
     <div class="pht">
         <img src="../static/img/prok.jfif" width="200" height="200" alt="" class="round">
     </div>
-
+        <br><br><br><br><br><br><br><br><br>
+<a href="/logout"><input class='button' type="button" value="Выход"></a>
 <div class="nam">
     <font face='Century gothic' size="4"><h1>{{ username }}</h1></font>
     <br></div>
-<br><br><br><br><br><br><br><br><br>
+<br><br><br><br>
      <font face='Corbel' color="grey" size="0,2"><h1>Мои любимые художники, картины, музеи: {{ about }}</h1></font>
 
 
